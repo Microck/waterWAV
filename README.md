@@ -1,69 +1,80 @@
+![waterwav](https://github.com/user-attachments/assets/f7bc0b37-05bd-4cc1-917d-88eb61287cfd)
 
-![waterwav](https://github.com/user-attachments/assets/70fad97b-c4f4-4f19-8c9c-3c1745ce8dc4)
+# Audio Spectrogram Watermarker
 
-# waterWAV
+A Python script to embed visual watermarks (images) into audio file spectrograms using STFT.
 
-[![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
+## Overview
 
-After getting the video "an interesting way to watermark audio" by idiotinium in my recommended feed a few months ago, I decided to work on an easy way to hide watermarks in audio, accesible to everyone and anyone. Taking a concept that might seem complex or niche and developing a tool that simplifies it empowers many more people to experiment and utilize the technique, whether for artistic expression, a bit of fun, or practical identification.
+This tool allows you to take an image and embed it as a visual pattern within the spectrogram of an audio file. The process involves performing a Short-Time Fourier Transform (STFT) on the audio, preparing the image as a mask, and then attenuating specific frequency components in the audio corresponding to the dark areas of the image. This creates a "hidden" image in the audio's frequency representation, often visible when the audio is analyzed with a spectrogram viewer.
 
----
+Inspired by artists like Aphex Twin and C418 who have famously embedded images in their tracks, and after seeing techniques discussed in videos like "an interesting way to watermark audio" by idiotinium, this script aims to make this fascinating process accessible to everyone. Taking a concept that might seem complex or niche and developing a tool that simplifies it empowers many more people to experiment and utilize the technique, whether for artistic expression, a bit of fun, or practical identification.
 
-## How to Use
+## Features
 
-This script allows you to embed a visual watermark (an image) into the spectrogram of an audio file.
+-   Embeds user-provided images into audio spectrograms.
+-   Utilizes Short-Time Fourier Transform (STFT) for frequency domain manipulation.
+-   Allows user to specify input audio and watermark image files.
+-   Watermark is embedded within a defined frequency range (default: 200 Hz - 10700 Hz).
+-   Adjustable attenuation factor to control the "visibility" or subtlety of the watermark.
+-   Visualizes both the original and watermarked spectrograms for comparison.
+-   User-friendly command-line interface with autodetection for common filenames.
+-   Outputs a new audio file with the embedded watermark.
 
-**1. Prerequisites:**
+## Requirements
 
-*   **Python 3.x:** Ensure you have Python 3 installed.
-*   **Dependencies:** Install the required Python libraries. Navigate to the script's directory in your terminal and run:
+-   Python 3.x
+-   Libraries: `numpy`, `librosa`, `matplotlib`, `Pillow`, `soundfile`
+
+Install the required libraries using the provided `requirements.txt` file:
+```bash
+pip install -r requirements.txt
+```
+
+## Usage
+
+1.  **Prepare your files:**
+    *   **Audio File:** Have your input audio file (e.g., `.wav`, `.mp3`).
+    *   **Watermark Image:**
+        *   Use a clear, high-contrast image (preferably **black and white**). Darker areas of the image will form the watermark.
+        *   The script resizes the image to fit the audio's duration and the specified frequency band. The original aspect ratio will likely be altered. Simple logos or symbols work best.
+        *   Common formats like PNG or JPG are supported.
+
+2.  **Run the script:**
+    Execute the script from your terminal. The script will attempt to autodetect `input_audio.wav` and `watermark.png` if they are in the same directory.
+
     ```bash
-    pip install -r requirements.txt
+    python embedwatermark.py
     ```
 
-**2. Prepare Your Files:**
+    The script will guide you if files are not autodetected:
+    *   It will ask if the input audio file is in the same location. If yes, enter the filename. If no, enter the full path.
+    *   It will then do the same for the watermark image file.
 
-*   **Audio File:**
-    *   Have your input audio file ready (e.g., `.wav`, `.mp3`). Common formats supported by Librosa should work.
-    *   You can place it in the same directory as the script and name it `input_audio.wav` for autodetection, or you'll be prompted for its path.
-*   **Watermark Image:**
-    *   **Format:** Use a common image format like PNG or JPG.
-    *   **Content & Color:** For best and most predictable results, use a **clear, high-contrast, black and white image**.
-        *   The script converts the image to grayscale.
-        *   **Darker areas (pixels with values less than 128 on a 0-255 scale) will form the "visible" part of the watermark.** These areas will correspond to attenuated (quieter) frequencies in the audio's spectrogram.
-        *   Lighter areas will have minimal to no effect on the audio.
-    *   **Dimensions & Aspect Ratio:**
-        *   The script will automatically resize your image.
-        *   The **height** of the watermark in the spectrogram is determined by the hardcoded frequency range in the script (currently 200 Hz to 10700 Hz).
-        *   The **width** of the watermark will be stretched or compressed to match the total duration (number of time frames) of your audio file.
-        *   **Important:** Because of this resizing, the **original aspect ratio of your image will likely be altered** in the final spectrogram. Images that are very wide or very tall relative to the audio's duration might appear significantly distorted. Simple logos, symbols, or bold, short text tend to work better than highly detailed or complex images.
-    *   You can place your watermark image in the same directory as the script and name it `watermark.png` for autodetection, or you'll be prompted for its path. The script handles the necessary orientation (it flips the image horizontally to appear correctly in the spectrogram).
+3.  **Output:**
+    *   A new audio file (default: `watermarked_audio.wav`) will be saved in the script's directory.
+    *   A plot will display the original and watermarked spectrograms.
 
-**3. Run the Script:**
+**Important Notes:**
+*   The visibility of the watermark in the spectrogram and its audibility depend on the audio content, the chosen image, and the `attenuation_factor` (default is `0.05` for strong visibility; closer to `1.0` is more subtle). You can adjust this in the `watermark_audio` function within the `embedwatermark.py` script.
+*   The image is flipped horizontally by the script to ensure correct orientation in the spectrogram.
 
-*   Doble script the script to execute the tool.
+## Example
 
-**4. Output:**
+This script can be used to add an artistic signature to an audio track, create an Easter egg for listeners, or simply experiment with audio-visual manipulation.
+I personally use it as an easter egg in some of my keyboard sound tests. You can check it yourself by downloading the [video](https://youtu.be/YzaJVl_TQVw) and checking the audio's spectrogram.
 
-*   **Watermarked Audio File:** A new audio file named `watermarked_audio.wav` will be saved in the same directory as the script. This file contains the embedded watermark.
-*   **Spectrogram Visualization:** A Matplotlib window will pop up showing two spectrograms:
-    *   The original audio's spectrogram.
-    *   The watermarked audio's spectrogram, where you should be able to visually identify your watermark in the specified frequency range.
+![waterwavdemonstration](https://github.com/user-attachments/assets/e5def000-d5ea-4b0c-9433-ba43bc0571c4)
 
-**5. Customization (Optional - Advanced):**
 
-*   **Attenuation Factor:** You can adjust the `attenuation_factor` in the `embed_watermark` function call within the `watermark_audio` function.
-    *   A value closer to `0.0` (e.g., `0.05`) makes the watermark more prominent (darker in the spectrogram, more audible change).
-    *   A value closer to `1.0` (e.g., `0.5`) makes it more subtle.
-*   **Frequency Range:** The embedding frequency range (`freq_start_hz` and `freq_end_hz`) is defined in the `prepare_watermark` function. You can modify these values if you need to target different frequency bands.
+## Limitations
 
----
+-   **Not for Security:** This method is for visual/artistic watermarking and is not a robust or secure method for copyright protection or anti-piracy. The watermark can be easily detected and potentially removed or altered with audio processing knowledge.
+-   **Audibility:** Depending on the `attenuation_factor` and the audio content, the watermark might introduce audible artifacts. A lower attenuation factor (making the watermark darker/stronger) increases the chance of audibility.
+-   **Image Distortion:** The watermark image is resized to fit the audio's duration and the fixed frequency band, which will change its aspect ratio.
+-   **Fixed Frequency Band:** The default frequency range for embedding is 200 Hz to 10700 Hz. While this can be changed in the code (`prepare_watermark` function in `embedwatermark.py`), it's not a runtime option.
+-   **Content Dependent:** The effectiveness and visibility can vary greatly depending on the spectral content of the original audio.
 
-**Example Workflow:**
+## License
 
-1.  Save your audio as `input_audio.wav` in the script's folder.
-2.  Save your black and white logo as `watermark.png` in the script's folder.
-3.  Run `pip install -r requirements.txt`.
-4.  Run the file.
-5.  Check for `watermarked_audio.wav` and observe the displayed spectrograms.
-
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
