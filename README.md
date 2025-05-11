@@ -1,9 +1,5 @@
 ![waterwav](https://github.com/user-attachments/assets/f7bc0b37-05bd-4cc1-917d-88eb61287cfd)
 
-# Audio Spectrogram Watermarker
-
-A Python script to embed visual watermarks (images) into audio file spectrograms using STFT.
-
 ## Overview
 
 This tool allows you to take an image and embed it as a visual pattern within the spectrogram of an audio file. The process involves performing a Short-Time Fourier Transform (STFT) on the audio, preparing the image as a mask, and then attenuating specific frequency components in the audio corresponding to the dark areas of the image. This creates a "hidden" image in the audio's frequency representation, often visible when the audio is analyzed with a spectrogram viewer.
