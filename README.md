@@ -43,10 +43,7 @@ This script allows you to embed a visual watermark (an image) into the spectrogr
 
 **3. Run the Script:**
 
-*   Execute the script using:
-    ```bash
-    python embedwatermark.py
-    ```
+*   Doble script the script to execute the tool.
 
 **4. Output:**
 
