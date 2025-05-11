@@ -43,19 +43,14 @@ This script allows you to embed a visual watermark (an image) into the spectrogr
 
 **3. Run the Script:**
 
-*   Open your terminal or command prompt.
-*   Navigate to the directory where you saved the script (`your_script_name.py`) and the `requirements.txt` file.
 *   Execute the script using:
     ```bash
-    python your_script_name.py
+    python embedwatermark.py
     ```
-    (Replace `your_script_name.py` with the actual name of your Python file).
-*   The script will first attempt to autodetect `input_audio.wav` and `watermark.png` in its directory.
-*   If not found, it will prompt you to specify if the files are in the same location or to provide the full path to your audio file and then your watermark image file.
 
 **4. Output:**
 
-*   **Watermarked Audio File:** A new audio file named `watermarked_audio.wav` (by default) will be saved in the same directory as the script. This file contains the embedded watermark.
+*   **Watermarked Audio File:** A new audio file named `watermarked_audio.wav` will be saved in the same directory as the script. This file contains the embedded watermark.
 *   **Spectrogram Visualization:** A Matplotlib window will pop up showing two spectrograms:
     *   The original audio's spectrogram.
     *   The watermarked audio's spectrogram, where you should be able to visually identify your watermark in the specified frequency range.
@@ -74,6 +69,6 @@ This script allows you to embed a visual watermark (an image) into the spectrogr
 1.  Save your audio as `input_audio.wav` in the script's folder.
 2.  Save your black and white logo as `watermark.png` in the script's folder.
 3.  Run `pip install -r requirements.txt`.
-4.  Run `python your_script_name.py`.
+4.  Run `python embedwatermark.py`.
 5.  Check for `watermarked_audio.wav` and observe the displayed spectrograms.
 
