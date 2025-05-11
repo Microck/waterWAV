@@ -7,8 +7,6 @@
 
 After getting the video "an interesting way to watermark audio" by idiotinium in my recommended feed a few months ago, I decided to work on an easy way to hide watermarks in audio, accesible to everyone and anyone. Taking a concept that might seem complex or niche and developing a tool that simplifies it empowers many more people to experiment and utilize the technique, whether for artistic expression, a bit of fun, or practical identification.
 
-![Screenshot_1140](https://github.com/user-attachments/assets/eeb0bc42-a95b-4ab6-b131-ea70fc462284)
-
 ---
 
 ## How to Use
