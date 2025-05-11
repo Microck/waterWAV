@@ -37,15 +37,7 @@ pip install -r requirements.txt
         *   Common formats like PNG or JPG are supported.
 
 2.  **Run the script:**
-    Execute the script from your terminal. The script will attempt to autodetect `input_audio.wav` and `watermark.png` if they are in the same directory.
-
-    ```bash
-    python embedwatermark.py
-    ```
-
-    The script will guide you if files are not autodetected:
-    *   It will ask if the input audio file is in the same location. If yes, enter the filename. If no, enter the full path.
-    *   It will then do the same for the watermark image file.
+    Execute the script by doble clicking it. 
 
 3.  **Output:**
     *   A new audio file (default: `watermarked_audio.wav`) will be saved in the script's directory.
