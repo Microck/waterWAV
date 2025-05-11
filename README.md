@@ -1,7 +1,7 @@
 
 ![waterwav](https://github.com/user-attachments/assets/70fad97b-c4f4-4f19-8c9c-3c1745ce8dc4)
 
-## Audio Watermarking Tool
+# waterWAV
 
 [![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
 
