@@ -1,9 +1,12 @@
-The practice of embedding hidden information or signatures within audio has evolved from basic copyright protection techniques to more elaborate artistic expressions. While early methods might have focused on subtle, often inaudible alterations to the audio signal itself for tracking or identification, the advent of digital audio processing and visualization tools opened up new creative avenues. One of the most iconic and artistically driven examples is Aphex Twin (Richard D. James), who famously embedded a distorted image of his face into the spectrogram of his track 'Equation' (often associated with the Windowlicker EP) in the late 90s. This wasn't for anti-piracy in the traditional sense, but more of a hidden signature or an artistic Easter egg, viewable only with spectrum analysis software. Years later, artists like C418, composer for the Minecraft soundtrack, continued this tradition, notably embedding a spectrogram image resembling a Creeper face (and the number '11') within one of his tracks, delighting fans who discovered it. These instances highlight a shift where watermarking becomes less about covert protection and more about a playful, direct communication or signature from the artist to the listener, leveraging the visual representation of sound itself.
 
-![spectogram-aphex-twin-art-visuals](https://github.com/user-attachments/assets/405c4c54-1b8f-478d-a8fc-882ab92f2f30)
-![Screenshot_1139](https://github.com/user-attachments/assets/617a3aae-a2a8-40d1-86b4-5ed414a52021)
+![waterwav](https://github.com/user-attachments/assets/70fad97b-c4f4-4f19-8c9c-3c1745ce8dc4)
+
+## Audio Watermarking Tool
+
+[![Python Version](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
 
 After getting the video "an interesting way to watermark audio" by idiotinium in my recommended feed a few months ago, I decided to work on an easy way to hide watermarks in audio, accesible to everyone and anyone. Taking a concept that might seem complex or niche and developing a tool that simplifies it empowers many more people to experiment and utilize the technique, whether for artistic expression, a bit of fun, or practical identification.
 
 ![Screenshot_1140](https://github.com/user-attachments/assets/eeb0bc42-a95b-4ab6-b131-ea70fc462284)
 
+---
