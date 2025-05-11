@@ -66,6 +66,6 @@ This script allows you to embed a visual watermark (an image) into the spectrogr
 1.  Save your audio as `input_audio.wav` in the script's folder.
 2.  Save your black and white logo as `watermark.png` in the script's folder.
 3.  Run `pip install -r requirements.txt`.
-4.  Run `python embedwatermark.py`.
+4.  Run the file.
 5.  Check for `watermarked_audio.wav` and observe the displayed spectrograms.
 
