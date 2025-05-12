@@ -32,7 +32,7 @@ pip install -r requirements.txt
 1.  **Prepare your files:**
     *   **Audio File:** Have your input audio file (e.g., `.wav`, `.mp3`).
     *   **Watermark Image:**
-        *   Use a clear, high-contrast image (preferably **black and white**). Darker areas of the image will form the watermark.
+        *   Use a clear, high-contrast image (preferably **black and white**). Brighter areas of the image will form the watermark.
         *   The script resizes the image to fit the audio's duration and the specified frequency band. The original aspect ratio will likely be altered. Simple logos or symbols work best.
         *   Common formats like PNG or JPG are supported.
 
