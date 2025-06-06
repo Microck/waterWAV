@@ -5,9 +5,6 @@
 		<img src="https://github.com/user-attachments/assets/f7bc0b37-05bd-4cc1-917d-88eb61287cfd" alt="waterWAV Banner"/>
 	</a>
 </p>
-
-<h1>waterWAV</h1>
-
 <p>
 	<strong>Python script to embed visual watermarks directly into audio file spectrograms using STFT.</strong>
 </p>
