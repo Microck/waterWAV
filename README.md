@@ -2,19 +2,18 @@
 
 <p>
 	<a href="https://github.com/Microck/waterWAV">
-		<img src="https://github.com/user-attachments/assets/f7bc0b37-05bd-4cc1-917d-88eb61287cfd" alt="waterWAV Banner" width="600"/>
+		<img src="https://github.com/user-attachments/assets/f7bc0b37-05bd-4cc1-917d-88eb61287cfd" alt="waterWAV Banner"/>
 	</a>
 </p>
 
 <h1>waterWAV</h1>
 
 <p>
-	<strong>An open-source desktop app to block distracting websites and boost your focus.</strong>
+	<strong>Python script to embed visual watermarks directly into audio file spectrograms using STFT.</strong>
 </p>
 
 <p>
 	<img src="https://img.shields.io/github/license/Microck/waterWAV?style=for-the-badge" alt="License"></a>
-	<img src="https://img.shields.io/github/actions/workflow/status/Microck/waterWAV/build.yml?branch=main&style=for-the-badge" alt="Build Status"></a>
 	<img src="https://img.shields.io/github/last-commit/Microck/waterWAV?style=for-the-badge" alt="Last Commit"></a>
 </p>
 
